@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confirm Delete - Tixati Web Interface</title>
+	<link rel="shortcut icon" href="/favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<style>
+
+<!--inline main.css-->
+
+	</style>
+</head>
+
+<script>
+<!--
+function udctrls()
+{
+	var inputs=document.getElementsByClassName("selection");
+	var sel=0;for(var i=inputs.length-1; i>=0; i--) if(inputs[i].checked) sel++;
+	var btns = document.getElementsByClassName("selctrl");
+	for(var i=btns.length-1; i>=0; i--) if(sel) btns[i].disabled=false; else btns[i].disabled=true;
+	document.getElementsByClassName("selall")[0].checked=(inputs.length==sel&&sel);
+}
+function selall()
+{
+	var bChecked=!!(document.getElementsByClassName("selall")[0].checked);
+	var inputs = document.getElementsByClassName("selection");
+	for(var i=inputs.length-1; i>=0; i--) inputs[i].checked=bChecked;
+	udctrls();
+}
+//-->
+</script>
+
+<body onload="udctrls()">
+
+<br/>
+Confirm Transfer Removal AND File Delete
+<br/>
+<br/>
+
+<form method="post" action="/transfers/action">
+
+
+<table class="listtable xferslist" style="table-layout:fixed;min-width:65em;">
+	<thead>
+		<tr>
+			<th style="width:1.5em;text-align:center;"><input class="selall" type="checkbox" onclick="selall()"/></th>
+			<th style="">Name</th>
+<!--if catsenabled-->
+			<th style="width:7em;">Category</th>
+<!--endif-->
+			<th style="width:8em;text-align:right;">Bytes</th>
+			<th style="width:2em;text-align:right;">&#37;</th>
+			<th style="width:9em;">Status</th>
+			<th style="width:4em;text-align:right;">B/s In</th>
+			<th style="width:4em;text-align:right;">B/s Out</th>
+			<th style="width:5em;text-align:center;">Priority</th>
+			<th style="width:5em;text-align:right;">Time Left</th>
+		</tr>
+	</thead>
+	<tbody>
+<!--list_start selected_transfers-->
+		<tr class="$statusclass$ $listlineclass$ $xfertypeclasses$">
+			<td style="width:1.5em;text-align:center;"><input class="selection" type="checkbox" name="$guid$" value="1" onclick="udctrls()" $checked$/></td>
+			<td class="xfername">
+				<div>
+					<div class="privateflag" style="float:right;"></div>
+					<div class="createdflag" style="float:right;"></div>
+					<div class="partialflag" style="float:right;"></div>
+					<div class="listcell" title="$name$"><a href="/transfers/$guid$/details">$name$</a></div>
+				</div>
+			</td>
+<!--if catsenabled-->
+			<td><div class="listcell" title="$category$"><a href="/categories/$catguid$">$category$</a></div></td>
+<!--endif-->
+			<td><div class="listcell" style="text-align:right;" title="$bytes$">$bytes$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$progress$">$progress$</div></td>
+			<td><div class="listcell" title="$status$">$status$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$bps_in$">$bps_in$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$bps_out$">$bps_out$</div></td>
+			<td><div class="listcell" style="text-align:center;" title="$priority$">$priority$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$timeleft$">$timeleft$</div></td>
+		</tr>
+<!--list_end-->
+	</tbody>
+</table>
+
+<br/>
+<input type="submit" name="deleteconf" value="Delete Transfers And Downloaded Files"/>&nbsp;
+<input type="submit" name="nav_transfers" Value="Cancel"/>
+</form>
+
+<br/>
+<br/>
+
+</body>
+</html>
+
+

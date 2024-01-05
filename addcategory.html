@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Category - Tixati Web Interface</title>
+	<link rel="shortcut icon" href="/favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<style>
+
+<!--inline main.css-->
+
+	</style>
+</head>
+
+<body style="text-align:center;">
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	Add Category
+</div>
+
+<br/>
+
+<table class="settingsbox">
+	<tr>
+		<td>Regular Category<br/>
+			<form method="post" action="/categories/action" enctype="multipart/form-data">
+				<input type="text" name="addcattext" size=40/>&nbsp;<input type="submit" name="addcat" Value="Add"/>&nbsp;
+			</form>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table class="settingsbox">
+	<tr>
+		<td>Separator<br/>
+			<form method="post" action="/categories/action" enctype="multipart/form-data">
+				<input type="text" name="addcatseptext" size=40/>&nbsp;<input type="submit" name="addcatsep" Value="Add"/>&nbsp;
+			</form>
+		</td>
+	</tr>
+</table>
+
+<br/>
+
+<form method="post" action="/categories/action" enctype="multipart/form-data">
+<table class="settingsbox">
+	<tr>
+		<td>
+			<div style="display:inline;white-space:nowrap;"><span class="allxfers">All Transfers</span>&nbsp;&nbsp;<input type="submit" name="addcatallxfers" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div style="display:inline;white-space:nowrap;"><span class="complete">Complete - Offline</span>&nbsp;&nbsp;<input type="submit" name="addcatcomplete" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div style="display:inline;white-space:nowrap;"><span class="standby">Standby</span>&nbsp;&nbsp;<input type="submit" name="addcatstandby" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div style="display:inline;white-space:nowrap;"><span class="seeding">Seeding</span>&nbsp;&nbsp;<input type="submit" name="addcatseeding" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div style="display:inline;white-space:nowrap;"><span class="downloading">Downloading</span>&nbsp;&nbsp;<input type="submit" name="addcatdownloading" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div style="display:inline;white-space:nowrap;"><span class="queued">Queued</span>&nbsp;&nbsp;<input type="submit" name="addcatqueued" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div style="display:inline;white-space:nowrap;"><span class="offline">Offline</span>&nbsp;&nbsp;<input type="submit" name="addcatoffline" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+			<div style="display:inline;white-space:nowrap;"><span class="uncategorized">Uncategorized</span>&nbsp;&nbsp;<input type="submit" name="addcatuncat" Value="Add"/>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		</td>
+	</tr>
+</table>
+</form>
+
+<br/>
+
+</body>
+</html>

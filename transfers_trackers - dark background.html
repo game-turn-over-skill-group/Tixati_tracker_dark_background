@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trackers - Tixati Web Interface</title>
+	<!-- <link rel="shortcut icon" href="/favicon.png"/> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<style>
+
+<!--inline main.css-->
+
+.tracker_inactive{color:#009B00;} /*默认黑色：000000 改为绿色(亮度+25%)：009B00 连接成功 */
+.tracker_active{color:#decb00;} /*默认绿色：007900 改为绿黄色：decb00 正在连接 */
+.tracker_error{color:#D90000;} /*默认红色：D90000 连接超时 */
+
+	</style>
+</head>
+
+<body>
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr $xfertypeclasses$">
+	$name$
+	<div class="partialflag" style="display:inline;"></div>
+	<div class="createdflag" style="display:inline;"></div>
+	<div class="privateflag" style="display:inline;"></div>
+</div>
+
+<br/>
+
+<table class="xfernav">
+	<tr>
+		<td><a href="details">Details</a></td>
+		<td><a href="files">Files</a></td>
+		<td class="xfernavselitem"><a href="trackers">Trackers</a></td>
+		<td><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td><a href="options">Options</a></td>
+	</tr>
+</table>
+
+<br/>
+
+
+<table class="listtable" style="table-layout:fixed;min-width:45em;">
+	<thead>
+		<tr>
+			<th style="width:5em;text-align:center;">Group</th>
+			<th>URL</th>
+			<th style="width:34%;">Status</th>
+		</tr>
+	</thead>
+	<tbody>
+<!--list_start trackers-->
+		<tr class="$statusclass$ $listlineclass$">
+			<td><div class="listcell" style="text-align:center;" title="$group$">$group$</div></td>
+			<td><div class="listcell" title="$url$">$url$</div></td>
+			<td><div class="listcell" title="$status$">$status$</div></td>
+		</tr>
+<!--list_end-->
+	</tbody>
+</table>
+
+<br/>
+
+<form method="post" action="/transfers/$guid$/trackers/action">
+<input type="submit" name="nav_trackeredit" Value="Edit Trackers"/>
+</form>
+
+<br/>
+<br/>
+
+</body>
+</html>
+

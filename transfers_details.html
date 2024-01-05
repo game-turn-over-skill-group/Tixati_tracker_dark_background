@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details - Tixati Web Interface</title>
+	<link rel="shortcut icon" href="/favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<style>
+
+<!--inline main.css-->
+
+table.xferdetailsctrls{width:96%;margin-left:2%;margin-right:2%;border:2px solid;margin-bottom:8pt;}
+table.xferdetailsctrls td{padding:4pt 6pt;}
+
+table.xferdetailstopstats{width:96%;margin-left:2%;margin-right:2%;text-align:left;}
+table.xferdetailstopstats th{width:33%;font-weight:bold;}
+table.xferdetailstopstats td{width:33%;}
+span.xferdetailstopstatsdata{float:right;font-weight:normal;padding:0pt 20pt;}
+
+
+table.xferdetailstopleftstats{width:28%;margin-left:2%;float:left;text-align:left;}
+table.xferdetailstopleftstats th{font-weight:bold;}
+table.xferdetailstopleftstats td{padding:0pt 0pt;}
+
+table.xferdetailstopmiddlestats{width:28%;margin-left:6%;float:left;text-align:left;}
+table.xferdetailstopmiddlestats th{font-weight:bold;}
+table.xferdetailstopmiddlestats td{padding:0pt 0pt;}
+
+table.xferdetailstoprightstats{width:28%;margin-right:2%;float:right;text-align:left;}
+table.xferdetailstoprightstats th{font-weight:bold;}
+table.xferdetailstoprightstats td{padding:0pt 0pt;}
+
+
+table.xferdetailsbottomleftstats{width:40%;margin-left:2%;float:left;text-align:left;}
+table.xferdetailsbottomleftstats th{font-weight:bold;}
+table.xferdetailsbottomleftstats td{text-align:right;padding:0pt 3pt;}
+
+table.xferdetailsbottomrightstats{width:52%;margin-right:2%;float:right;text-align:left;table-layout:fixed;}
+table.xferdetailsbottomrightstats th{font-weight:bold;}
+table.xferdetailsbottomrightstats td{text-align:right;padding:0pt 3pt;}
+
+	</style>
+</head>
+
+<body>
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr $xfertypeclasses$">
+	$name$
+	<div class="partialflag" style="display:inline;"></div>
+	<div class="createdflag" style="display:inline;"></div>
+	<div class="privateflag" style="display:inline;"></div>
+</div>
+
+<br/>
+
+<table class="xfernav">
+	<tr>
+		<td class="xfernavselitem"><a href="details">Details</a></td>
+		<td><a href="files">Files</a></td>
+		<td><a href="trackers">Trackers</a></td>
+		<td><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td><a href="options">Options</a></td>
+	</tr>
+</table>
+
+<br/>
+<div class="$statusclass$">$shortstatus$</div>
+<br/>
+<br/>
+<div style="clear:both;"/>
+
+<table class="xferdetailstopleftstats">
+	<tr>
+		<th>Progress</th>
+	</tr>
+	<tr>
+		<td>Bytes Complete</td>
+		<td style="text-align:right;">$bytes_complete$</td>
+	</tr>
+	<tr>
+		<td>Remaining</td>
+		<td style="text-align:right;">$bytes_remaining$</td>
+	</tr>
+	<tr>
+		<td>Total</td>
+		<td style="text-align:right;">$bytes_total$</td>
+	</tr>
+</table>
+
+<table class="xferdetailstopmiddlestats">
+	<tr>
+		<th>$piecesize$ Pieces</th>
+	</tr>
+	<tr>
+		<td>Saved</td>
+		<td style="text-align:right;">$pieces_complete$</td>
+	</tr>
+	<tr>
+		<td>Remaining</td>
+		<td style="text-align:right;">$pieces_remaining$</td>
+	</tr>
+	<tr>
+		<td>Total</td>
+		<td style="text-align:right;">$pieces_total$</td>
+	</tr>
+</table>
+
+<table class="xferdetailstoprightstats">
+	<tr>
+		<th>Availability</th>
+	</tr>
+	<tr>
+		<td>Seeds</td>
+		<td style="text-align:right;">$seeds$</td>
+	</tr>
+	<tr>
+		<td>Peers</td>
+		<td style="text-align:right;">$peers$</td>
+	</tr>
+	<tr>
+		<td>Copies</td>
+		<td style="text-align:right;">$availability$</td>
+	</tr>
+</table>
+
+<div style="clear:both;"/>
+
+<br/>
+
+<table class="xferdetailsbottomleftstats">
+	<tr>
+		<th>Upload Ratio</th>
+		<td>$ul_ratio$</td>
+	</tr>
+	<tr>
+		<th>Swarm Avg. Download B/s</th>
+		<td>$swarm_avg_dlbps$</td>
+	</tr>
+	<tr>
+		<th>Local Avg. Download B/s</th>
+		<td>$local_avg_dlbps$</td>
+	</tr>
+	<tr>
+		<th>Elapsed Time</th>
+		<td>$elapsed_time$</td>
+	</tr>
+	<tr>
+		<th>Remaining Time</th>
+		<td>$remaining_time$</td>
+	</tr>
+</table>
+
+
+<table class="xferdetailsbottomrightstats">
+	<tr>
+		<th></th>
+		<th style="text-align:right;">Total</th>
+		<th style="text-align:right;">File</th>
+		<th style="text-align:right;">Protocol</th>
+	</tr>
+	<tr>
+		<th>Bytes In</th>
+		<td>$in_bytes_total$</td>
+		<td>$in_bytes_file$</td>
+		<td>$in_bytes_protocol$</td>
+	</tr>
+	<tr>
+		<th>Bytes Out</th>
+		<td>$out_bytes_total$</td>
+		<td>$out_bytes_file$</td>
+		<td>$out_bytes_protocol$</td>
+	</tr>
+	<tr>
+		<th>B/s In</th>
+		<td>$in_bps_total$</td>
+		<td>$in_bps_file$</td>
+		<td>$in_bps_protocol$</td>
+	</tr>
+	<tr>
+		<th>B/s Out</th>
+		<td>$out_bps_total$</td>
+		<td>$out_bps_file$</td>
+		<td>$out_bps_protocol$</td>
+	</tr>
+</table>
+
+<div style="clear:both;"/>
+
+<br/>
+
+
+<form method="post" action="/transfers/$guid$/details/action">
+<table class="xferdetailsctrls $xfertypeclasses$">
+	<tr>
+		<td><input type="submit" name="start" value="Start"/></td>
+		<td><input type="submit" name="stop" value="Stop"/></td>
+		<td><input type="submit" name="remove" value="Remove"/></td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="searchdht" value="Search DHT"/></td>
+		<td><input type="submit" name="checkfiles" value="Check Files"/></td>
+		<td class="deleteoption"><input type="submit" name="delete" value="Delete Files"/></td>
+	</tr>
+</table>
+</form>
+
+<br/>
+
+</body>
+</html>
+
+

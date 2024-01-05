@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Transfer - Tixati Web Interface</title>
+	<link rel="shortcut icon" href="/favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<style>
+
+<!--inline main.css-->
+
+	</style>
+</head>
+
+<body style="text-align:center;">
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	Add Transfer
+</div>
+
+
+<br/>
+			<form method="post" action="/transfers/action" enctype="multipart/form-data">
+
+<!--if catsenabled-->
+<table class="settingsbox xfercatctrls">
+	<tr>
+		<td>
+<!--list_start movedestcategories-->
+			<div class="xfercatctrl $statusclass$" style="white-space:nowrap;" title="$tooltip$">
+				<input class="selection" type="radio" name="category" value="$guid$" $checked$/><span>$name$</span>&nbsp;&nbsp;
+			</div>
+<!--list_end-->
+		</td>
+	</tr>
+</table>
+<!--endif-->
+
+<br/>
+
+<table class="settingsbox">
+	<tr>
+		<td>Magnet link or HTTP link to .torrent file<br/>
+				<input type="text" name="addlinktext" size=70/><br/>
+				<input type="submit" name="addlink" Value="Add"/>&nbsp;
+				<input type="checkbox" name="noautostart" value="1"/>Stop before file allocation
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table class="settingsbox">
+	<tr>
+		<td>Upload a .torrent file<br/>
+				<input type="file" name="metafile" accept=".torrent,application/x-bittorrent" size=70/><br/>
+				<input type="submit" name="addmetafile" Value="Add"/>&nbsp;
+				<input type="checkbox" name="noautostartmetafile" value="1"/>Stop before file allocation
+		</td>
+	</tr>
+</table>
+			</form>
+
+<br>
+
+</body>
+</html>

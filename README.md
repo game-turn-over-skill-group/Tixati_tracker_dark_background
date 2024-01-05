@@ -1,2 +1,32 @@
-# Tixati_tracker_dark_background
-Tixati v3.19 Web GUI (for tracker)
+
+
+
+### 系统版本（System version）：win10
+
+### Tixati版本（Tixati version）：v3.19
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confirm Remove - Tixati Web Interface</title>
+	<link rel="shortcut icon" href="/favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<style>
+
+<!--inline main.css-->
+
+	</style>
+</head>
+
+<script>
+<!--
+function udctrls()
+{
+	var inputs=document.getElementsByClassName("selection");
+	var sel=0;for(var i=inputs.length-1; i>=0; i--) if(inputs[i].checked) sel++;
+	var btns = document.getElementsByClassName("selctrl");
+	for(var i=btns.length-1; i>=0; i--) if(sel) btns[i].disabled=false; else btns[i].disabled=true;
+	document.getElementsByClassName("selall")[0].checked=(inputs.length==sel&&sel);
+}
+function selall()
+{
+	var bChecked=!!(document.getElementsByClassName("selall")[0].checked);
+	var inputs = document.getElementsByClassName("selection");
+	for(var i=inputs.length-1; i>=0; i--) inputs[i].checked=bChecked;
+	udctrls();
+}
+//-->
+</script>
+
+<body onload="udctrls()">
+
+<br/>
+Confirm Category Removal<br/>
+<br/>
+<br/>
+
+<form method="post" action="/categories/action">
+
+<table class="listtable catlist" style="table-layout:fixed;min-width:60em;">
+	<thead>
+		<tr>
+			<th style="width:1.5em;"><input class="selall" type="checkbox" onclick="selall()"/></th>
+			<th style="">Category</th>
+			<th style="width:5em;">Transfers</th>
+			<th style="width:5em;text-align:right;">Complete</th>
+			<th style="width:5em;text-align:right;">Standby</th>
+			<th style="width:5em;text-align:right;">Seeding</th>
+			<th style="width:5em;text-align:right;">DLing</th>
+			<th style="width:5em;text-align:right;">Queued</th>
+			<th style="width:5em;text-align:right;">Offline</th>
+			<th style="width:8em;text-align:center;">Priority</th>
+		</tr>
+	</thead>
+	<tbody>
+<!--list_start selected_categories-->
+		<tr class="$statusclass$ $listlineclass$">
+			<td><input class="selection" type="checkbox" name="$guid$" value="1" onclick="udctrls()" $checked$/></td>
+			<td><div class="listcell" title="$name$"><a href="/categories/$guid$">$name$</a></div></td>
+			<td><div class="listcell" style="text-align:right;" title="$all$">$all$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$complete$">$complete$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$standby$">$standby$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$seeding$">$seeding$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$downloading$">$downloading$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$queued$">$queued$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$offline$">$offline$</div></td>
+			<td><div class="listcell" style="text-align:center;" title="$priority$">$priority$</div></td>
+		</tr>
+<!--list_end-->
+	</tbody>
+</table>
+
+<br/>
+<input type="submit" name="removeconf" value="Remove Categories"/>&nbsp;
+<input type="submit" name="nav_categories" Value="Cancel"/>
+</form>
+
+<br/>
+<br/>
+
+</body>
+</html>
+
+

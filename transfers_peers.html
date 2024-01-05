@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Peers - Tixati Web Interface</title>
+	<link rel="shortcut icon" href="/favicon.png"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
+	<style>
+
+<!--inline main.css-->
+
+.peer_ignored{color:#FF0000;}
+.peer_online{color:#0A5C00;}
+.peer_offline{color:#737373;}
+.peer_connecting{color:#E19100;}
+.peer_online_complete{color:#00409B;}
+.peer_offline_complete{color:#6D73B3;}
+.peer_fresh{color:#737373;}
+
+.peerstatus_in_on{color:#04AD04;background-color:#AFF8AF;}
+.peerstatus_in_off{color:#F8385A;background-color:#FFC0AB;}
+.peerstatus_li_on{color:#04AD04;background-color:#AFF8AF;}
+.peerstatus_li_off{color:#F8385A;background-color:#FFC0AB;}
+.peerstatus_rc_on{color:#04AD04;background-color:#AFF8AF;}
+.peerstatus_rc_off{color:#F8385A;background-color:#FFC0AB;}
+
+.peerstatus_out_on{color:#04AD04;background-color:#AFF8AF;}
+.peerstatus_out_off{color:#F8385A;background-color:#FFC0AB;}
+.peerstatus_ri_on{color:#04AD04;background-color:#AFF8AF;}
+.peerstatus_ri_off{color:#F8385A;background-color:#FFC0AB;}
+.peerstatus_lc_on{color:#04AD04;background-color:#AFF8AF;}
+.peerstatus_lc_off{color:#F8385A;background-color:#FFC0AB;}
+
+.peerstatus{color:#000000;}
+
+	</style>
+</head>
+
+<body>
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr $xfertypeclasses$">
+	$name$
+	<div class="partialflag" style="display:inline;"></div>
+	<div class="createdflag" style="display:inline;"></div>
+	<div class="privateflag" style="display:inline;"></div>
+</div>
+
+<br/>
+
+<table class="xfernav">
+	<tr>
+		<td><a href="details">Details</a></td>
+		<td><a href="files">Files</a></td>
+		<td><a href="trackers">Trackers</a></td>
+		<td class="xfernavselitem"><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td><a href="options">Options</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<table class="listtable" style="table-layout:fixed;min-width:57em;">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th style="width:4em;text-align:center;">Link</th>
+			<th style="width:5em;text-align:right;">Bytes In</th>
+			<th style="width:5em;text-align:right;">Bytes Out</th>
+			<th style="width:2em;text-align:right;">&#37;</th>
+			<th style="width:11.5em;">Status</th>
+			<th style="width:5em;text-align:right;">B/s In</th>
+			<th style="width:5em;text-align:right;">B/s Out</th>
+			<th style="width:5em;text-align:right;">Rem B/s</th>
+		</tr>
+	</thead>
+	<tbody>
+<!--list_start peers-->
+		<tr class="$statusclass$ $listlineclass$">
+			<td><div class="listcell" title="$name$ 
+$location$">$flag$ $name$</div></td>
+			<td><div class="listcell" style="text-align:center;" title="$link$">$link$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$bytesin$">$bytesin$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$bytesout$">$bytesout$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$progress$">$progress$</div></td>
+			<td><div class="listcell" title="$statustt$">$status$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$bpsin$">$bpsin$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$bpsout$">$bpsout$</div></td>
+			<td><div class="listcell" style="text-align:right;" title="$rembps$">$rembps$</div></td>
+		</tr>
+<!--list_end-->
+	</tbody>
+</table>
+
+<br/>
+<br/>
+
+</body>
+</html>
+
+
