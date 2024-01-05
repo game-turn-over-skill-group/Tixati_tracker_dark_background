@@ -1,11 +1,17 @@
 
-body{font-size:1em;font-family:arial,helvetica,sans-serif;color:black;background:white;word-wrap:break-word;text-align:center;}
-
+body {
+    font-size: 1em;
+    font-family: arial, helvetica, sans-serif;
+    color: #a1a3a6; /*默认黑色：black 白色：white 灰色：grey 银鼠：#a1a3a6 这是文件标题+边框+日志文字 颜色 */
+    background: black; /*默认白色：white 黑色：black */
+    word-wrap: break-word;
+    text-align: center;
+}
 a{text-decoration:none;}
-a:link{color:#0000EE;}
-a:visited{color:#0000EE;}
-a:hover,a:focus{color:#0000EE;}
-a:active{color:#0000EE;}
+a:link{color:#FFA500;} /*默认=0000EE（蓝色）修改=FFA500（橙色）这是默认按钮颜色 */
+a:visited{color:#6d5826;} /*默认=0000EE（蓝色）修改=6d5826（莺茶）这是点击过按钮颜色 */
+a:hover,a:focus{color:#FFA500;} /*默认=0000EE（蓝色）修改=FFA500（橙色）这是鼠标移动到按钮的颜色 */
+a:active{color:#FFA500;} /*默认=0000EE（蓝色）修改=FFA500（橙色） */
 
 table.topnav{text-align:left;width:100%;margin-left:auto;margin-right:auto;font-size:115%;}
 table.topnav td{vertical-align:top;width:17%;text-align:center;}
@@ -13,8 +19,8 @@ td.topnavselitem{font-weight:bold;}
 
 .titlehdr{font-weight:bold;font-size:125%;text-align:center;}
 
-.list_odd{background:#EEEEEE;}
-.list_even{background:#FFFFFF;}
+.list_odd{background:#000000;} /*默认灰色：EEEEEE 修改为黑色：000000 */
+.list_even{background:#000E2A;} /*默认白色：FFFFFF 修改为青褐(饱和度+100%)：000E2A */
 .listcell{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;padding-left:0.1em;padding-right:0.1em;}
 
 table.eventlogview{width:98%;margin-left:1%;margin-right:1%;text-align:left;border:2px solid;}
@@ -24,7 +30,7 @@ table.settingsbox{width:94%;margin-left:3%;margin-right:3%;text-align:left;borde
 table.settingsbox td{padding:6pt 6pt;}
 
 table.listtable{width:98%;margin-left:1%;margin-right:1%;text-align:left;border:2px solid;margin-bottom:8pt;}
-table.listtable thead{background-color:#c9ddd2;}
+table.listtable thead{background-color:#0c212b;}/*默认灰白色：c9ddd2 修改为褐返：0c212b 这是首行名称介绍背景色 */
 table.listtable th{padding:0px 2pt;border-width:0px;font-weight:bold;}
 table.listtable td{padding:0px 2pt;border-width:0px;}
 table.listtable a{color:inherit;}
@@ -45,18 +51,18 @@ td.xfernavselitem{vertical-align: top; width: 12%; text-align: center;font-weigh
 table.xfercatctrls a{color:inherit;}
 .xfercatctrl{display:inline;white-space:nowrap;}
 
-.offline{color:#9E2E27;}
-.queued{color:#0000FF;}
-.downloading{color:#0C6000;}
-.seeding{color:#259985;}
-.standby{color:#0000FF;}
-.complete{color:#87215B;}
+.offline{color:#9E2E27;} /*默认红色：9E2E27 */
+.queued{color:#0000FF;} /*默认蓝色：0000FF */
+.downloading{color:#0C6000;} /*默认绿色：0C6000 */
+.seeding{color:#259985;}/*默认祖母绿：259985 */
+.standby{color:#0000FF;}/*默认蓝色：0000FF */
+.complete{color:#87215B;}/*默认暗紫色：87215B */
 
 .xferslist .created .privateflag:after{content:" ";padding-right:0.3em;}
 .xferslist .partial .privateflag:after{content:" ";padding-right:0.3em;}
-.xferslist .private .privateflag:after{content:"🔒";color:#BB9900;padding-right:0.3em;}
-.xferslist .partial .partialflag:after{content:"▥";color:#3333EE;}
-.xferslist .created .createdflag:after{content:"🟏";color:#BBAA00;}
+.xferslist .private .privateflag:after{content:"🔒";color:#BB9900;padding-right:0.3em;}/*默认褐黄色：BB9900*/
+.xferslist .partial .partialflag:after{content:"▥";color:#3333EE;}/*默认蓝紫色：3333EE */
+.xferslist .created .createdflag:after{content:"🟏";color:#BBAA00;}/*默认暗黄：BBAA00 */
 
 .xferslist .private .partialflag:before{content:" ";margin-left:0.5em;}
 .xferslist .partial .partialflag:before{content:" ";margin-left:0.5em;}
@@ -73,10 +79,10 @@ table.xfercatctrls a{color:inherit;}
 
 /*categories*/
 
-.allxfers{color:#000000;}
-.uncategorized{color:#000000;}
-.category{color:#000000;}
-.separator{color:#000000;}
+.allxfers{color:#000000;} /*默认黑色：000000  */
+.uncategorized{color:#000000;} /*默认黑色：000000  */
+.category{color:#000000;} /*默认黑色：000000  */
+.separator{color:#000000;} /*默认黑色：000000  */
 
 .catlist .separator{font-weight:bold;height:1.8em;}
 .xfercatctrls .separator{font-weight:bold;}
