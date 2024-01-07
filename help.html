@@ -1,53 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Help - Tixati Web Interface</title>
-	<link rel="shortcut icon" href="/favicon.png"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>		
-	<style>
-
-<!--inline main.css-->
-
-	</style>
+<title>页面标题</title>
+<style>
+body {
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* 让 body 铺满整个视口高度 */
+  margin: 0; /* 清除默认的 body 外边距 */
+}
+a {
+  display: block;
+  margin-bottom: 10px;
+}
+textarea {
+  width: 650px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+.button-container {
+  display: flex;
+  align-items: flex-end;
+  width: 650px; /* 与 textarea 的宽度相同 */
+  margin-top: 10px; /* 添加一些上边距，使按钮与 textarea 有一定间隙 */
+}
+button {
+  margin-left: 10px; /* 添加一些左边距，使按钮与 textarea 有一定间隙 */
+}
+h4 {
+  margin-bottom: 5px; /* 调整 h4 和 h5 之间的间距 */
+}
+h5 {
+  margin-top: 5px; /* 调整 h4 和 h5 之间的间距 */
+  margin-bottom: 15px; /* 调整 h5 和图片之间的间距 */
+}
+img {
+  margin-top: 15px; /* 调整图片与上方元素的间距 */
+}
+/* 新增的样式 */
+.download-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+</style>
 </head>
-
 <body>
 
-<table class="topnav"><tbody>
-	<tr>
-		<td><a href="/home">Home</a></td>
-		<td><a href="/transfers">Transfers</a></td>
-		<td><a href="/bandwidth">Bandwidth</a></td>
-		<td><a href="/dht">DHT</a></td>
-		<td><a href="/settings">Settings</a></td>
-		<td class="topnavselitem"><a href="/help">Help</a></td>
-	</tr>
-</tbody></table>
+<!-- 新增下载链接 -->
+<a class="download-link" href="https://update-check.tixati.com/download/index.html" target="_blank">【Tixati官网下载】</a>
 
-<br/>
-<br/>
+<h1>联系与支持 发送反馈</h1>
+<h4>以下有3种联系方式,你可以选择一种联系我们.</h4>
+<h5>There are 3 ways to contact us, you can choose one to contact us.</h5>
 
-<div style="text-align:left;width:75%;margin-left:15%;margin-right:10%;">
-	<span style="font-size:150%;">Tixati v$strver$<br/></span>
-	<br/>
-	<div style="font-size:120%;">
-		<a href="https://support.tixati.com" target="_blank">Online Help</a>
-		<br/>
-		<br/>
-		<a href="https://www.tixati.com/news/" target="_blank">Tixati News</a>
-		<br/>
-		<br/>
-		<a href="https://forum.tixati.com" target="_blank">Support Forum</a>
-		<br/>
-		<br/>
-		<a href="https://update-check.tixati.com/checkver/$strfullver$" target="_blank">Check For Updates</a>
-		<br/>
-	</div>
+<a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=KXFmVj7AneGmoMlSW23rORjoh8dhqHfP&jump_from=webapi&authKey=R14uaHpO7Hg7IdnItBuzS9HanQFNlaQMh5IDkHeLoN5OPGd1LQeRIhi4IWKqO8qy"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="亮个相吧小宝贝(整活高手)(BT-help)" title="亮个相吧小宝贝(整活高手)(BT-help)"></a>
+
+<a target="_blank" href="https://discord.gg/nGRH2jYcKA"><img border="0" src="https://cdn.discordapp.com/icons/1192610736015413310/ee2c32fdc314b89f2c1e52e1f3a06741.webp?size=160" alt="BT-tracker" title="Join Discord group：【BT-tracker】"></a>
+
+<textarea id="message" placeholder="Type your message"></textarea>
+<div class="button-container">
+  <button onclick="sendMessage()">Send Message『发送反馈』</button>
 </div>
 
-<br/>
-<br/>
+<script>
+function sendMessage() {
+    var webhookUrl = "https://discord.com/api/webhooks/1192620414376095824/qwVnd7rtiP9gjzRMKEd1de0-mbqKajNMeolRvwrfMTE9JtDlK7SB_O6xUv2gC3jgIagG";
+    var messageContent = document.getElementById("message").value;
+
+    var data = {
+        content: messageContent
+    };
+
+    fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        console.log("Message sent. Status:", response.status);
+    })
+    .catch(error => {
+        console.error("Error sending message:", error);
+    });
+}
+</script>
 
 </body>
 </html>
-
